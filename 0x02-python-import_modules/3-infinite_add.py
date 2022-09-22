@@ -1,11 +1,18 @@
 #!/usr/bin/python3
-from sys import argv
-if __name__ == "__main__":
-    count = len(argv)
-    add = 0
-    if count == 1:
-        print("{}".format(add))
+def add_arg(argv):
+    n = len(argv) - 1
+    if n == 0:
+        print("{:d}".format(n))
+        return
     else:
-        for i in range(1, count):
-            add += int(argv.__getitem__(i))
-        print("{}".format(add))
+        i = 1
+        add = 0
+        while i <= n:
+            add += int(argv[i])
+            i += 1
+        print("{:d}".format(add))
+
+
+if __name__ == "__main__":
+    import sys
+    add_arg(sys.argv)
